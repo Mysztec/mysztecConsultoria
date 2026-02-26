@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f4f6fb;
+}
+
+/* ===== LAYOUT GRID PRINCIPAL ===== */
+
+.layout {
+    display: grid;
+    grid-template-columns: 0.8fr 4fr;
+    min-height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+
+.sidebar {
+    background: #111827;
+    color: white;
+    padding: 2rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-top: 2rem;
+    display: grid;
+    gap: 0.8rem;
+}
+
+.sidebar li {
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.sidebar li:hover,
+.sidebar .active {
+    background: #1f2937;
+}
+
+/* ===== MAIN AREA ===== */
+
+.main {
+    padding: 2rem;
+    display: grid;
+    grid-template-rows: auto auto auto auto 1fr;
+    gap: 2rem;
+}
+
+/* ===== TOPBAR ===== */
+
+.topbar {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+}
+
+.topbar input {
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ddd;
+}
+
+.topbar button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+/* ===== WELCOME ===== */
+
+.welcome {
+    background: linear-gradient(90deg,#1e3a8a,#2563eb);
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/* ===== CARDS ===== */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* ===== TABLE SECTION ===== */
+
+.table-section,
+.chart-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/* ============================= */
+/* ===== RESPONSIVIDADE ===== */
+/* ============================= */
+
+@media (max-width: 1200px) {
+
+    .layout {
+        grid-template-columns: 1fr 4fr;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .main {
+        grid-template-rows: auto auto auto auto auto;
+    }
+
+    .topbar {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
