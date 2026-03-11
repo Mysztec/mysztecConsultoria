@@ -1,0 +1,1 @@
+export default function NomeDaTela() { return <h1>Nome da Tela</h1> }
